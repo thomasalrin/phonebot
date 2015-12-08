@@ -17,9 +17,11 @@ var service_credentials = function (name) {
   return service.credentials
 }
 
-var twilio_account = service_credentials('twilio'),
-  host = twilio_account.url.replace(/http(s)?:\/\//, ''),
-  client = twilio(twilio_account.accountSID, twilio_account.authToken, {host: host})
+//var twilio_account = service_credentials('twilio'),
+//  host = twilio_account.url.replace(/http(s)?:\/\//, ''),
+ // client = twilio(twilio_account.accountSID, twilio_account.authToken, {host: host})
+var client = twilio("AC35b5d08608bf152765fc41090426ff3b", "7cf04a14294cce95e89a0340cf00e1cd", {host: "api.twilio.com/2010-04-01/Accounts/AC35b5d08608bf152765fc41090426ff3b"})
+
 
 var s2t = service_credentials('speech_to_text')
 var speech_to_text = watson.speech_to_text({
